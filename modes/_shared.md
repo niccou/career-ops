@@ -28,6 +28,7 @@ pour ma **prochaine mission** (ou pour enrichir mon pipeline de futurs projets).
 - **Qualité** : TDD, BDD (SpecFlow/Reqnroll), Clean Code, Revue de code, Pair programming
 - **Cloud** : Azure (DevOps, CI/CD, migration), AWS (microservices, EC2)
 - **IA/LLM** : Claude Code, GitHub Copilot — utilisateur avancé, intégration dans le workflow dev
+- **IA/.NET** : Semantic Kernel (montée en compétences — pivot RAG/LLM pour .NET)
 
 **Stack technique complète :**
 C#, .NET 8, ASP.NET Core (Minimal API, REST, gRPC), EF Core, MediatR,
@@ -44,7 +45,7 @@ TeamCity, Jenkins, SQL Server, xUnit, Moq, Reqnroll
 4. **Formateur C# / .NET / Architecture** (750–1000 €/j) — intra-entreprise 1–5 jours, présentiel/remote
 5. **Expert IA/LLM appliqué + .NET** (800–1100 €/j) — intégration LLM, automatisation IA, profil rare
 6. **DevSecOps / Sécurité applicative** (650–850 €/j) — OWASP, audit, remédiation (exp. AXA Wealth)
-7. **Audit & Conseil ponctuel .NET** (800–1200 €/j) — audit de code / architecture / dette technique, livrables en quelques jours, PME/ETI, micro-entreprise (temps libre ou inter-mission)
+7. **Audit / Conseil technique ponctuel** (800–1200 €/j) — revue de code, audit d'architecture, conseil 1–5 jours. Micro-entreprise, réalisable en parallèle d'une mission principale.
 
 ---
 
@@ -114,7 +115,7 @@ TeamCity, Jenkins, SQL Server, xUnit, Moq, Reqnroll
 2. **Double profil Dev + Formateur** — unique sur le marché
 3. **Software Craft** — TDD, BDD, Clean Architecture, pas juste "ça compile"
 4. **Secteurs critiques** — banque, assurance, e-commerce à fort trafic
-5. **IA/LLM early adopter** — Claude Code, GitHub Copilot, automatisation IA
+5. **IA/LLM early adopter** — Claude Code, GitHub Copilot, automatisation IA. Montée en compétences active sur Semantic Kernel (RAG/.NET) pour l'archétype ia-llm.
 
 ---
 
