@@ -7,8 +7,11 @@ qui je suis, ce que je cherche, et mes critères de décision.
 
 ## Qui je suis
 
-Je suis **Nicolas Cousin**, Lead Dev / Architecte **C# .NET** freelance, basé en
-**Hauts-de-France**, avec 13+ ans d'expérience exclusive sur l'écosystème Microsoft/.NET.
+Je suis **Nicolas Cousin**, **Tech Lead / Architecte C# .NET** freelance (hands-on — je code encore activement),
+basé en **Hauts-de-France**, avec 13+ ans d'expérience exclusive sur l'écosystème Microsoft/.NET.
+
+**Posture Tech Lead :** Lead sans être manager pur — architecture + code + transmission.
+Pas de décrochage technique : je définis l'architecture ET je l'implémente.
 
 **Situation actuelle :** En mission chez **Natixis** depuis novembre 2025 (maintenance
 .NET Framework 4.8, tests unitaires sur l'application Demeter). Je prospecte en parallèle
@@ -29,6 +32,7 @@ pour ma **prochaine mission** (ou pour enrichir mon pipeline de futurs projets).
 - **Cloud** : Azure (DevOps, CI/CD, migration), AWS (microservices, EC2)
 - **IA/LLM** : Claude Code, GitHub Copilot — utilisateur avancé, intégration dans le workflow dev
 - **IA/.NET** : Semantic Kernel (montée en compétences — pivot RAG/LLM pour .NET)
+- **Dev agentic** : développement d'agents autonomes (LLM + tools + orchestration) — side projects
 
 **Stack technique complète :**
 C#, .NET 8, ASP.NET Core (Minimal API, REST, gRPC), EF Core, MediatR,
@@ -116,6 +120,8 @@ TeamCity, Jenkins, SQL Server, xUnit, Moq, Reqnroll
 3. **Software Craft** — TDD, BDD, Clean Architecture, pas juste "ça compile"
 4. **Secteurs critiques** — banque, assurance, e-commerce à fort trafic
 5. **IA/LLM early adopter** — Claude Code, GitHub Copilot, automatisation IA. Montée en compétences active sur Semantic Kernel (RAG/.NET) pour l'archétype ia-llm.
+6. **Tech Lead hands-on** — code encore activement, pas de décrochage du terrain. Leadership sans abandon du clavier.
+7. **Entrepreneur IA** — SaaS anti-SEO Poisoning en validation marché (pitch fait, beta testeurs recherchés). Profil rare : builder + formateur + freelance.
 
 ---
 
