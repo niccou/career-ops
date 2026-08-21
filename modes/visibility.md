@@ -13,7 +13,7 @@ freelances seniors après 3 ans. C'est le canal le plus rentable à long terme.
 
 ## Déclencheur
 
-`/career-ops visibilite` ou demande explicite d'audit/optimisation de profil.
+`/career-ops visibility` ou demande explicite d'audit/optimisation de profil.
 
 ---
 

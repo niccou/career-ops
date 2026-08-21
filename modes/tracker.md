@@ -25,14 +25,14 @@ DÉCOUVERTE → ÉVALUÉ → POSTULÉ → ENTRETIEN → NÉGOCIATION → GAGNÉ 
 
 | Statut | Définition | Action suivante |
 |--------|-----------|-----------------|
-| `découverte` | Mission repérée, pas encore évaluée | `/career-ops mission [URL]` |
+| `découverte` | Mission repérée, pas encore évaluée | `/career-ops eval [URL]` |
 | `évalué-A` | Score A — à postuler en priorité | Postuler dans les 24h |
 | `évalué-B` | Score B — à postuler si pas mieux | Postuler dans les 48h |
 | `évalué-C` | Score C — en attente pipeline vide | Mettre de côté |
 | `évalué-F` | Score F — écarté | Archiver |
 | `postulé` | Candidature envoyée | Relancer J+7 si silence |
 | `entretien` | Entretien planifié ou passé | Préparer / envoyer suivi |
-| `négociation` | Discussion TJM/conditions en cours | `/career-ops negocie` |
+| `négociation` | Discussion TJM/conditions en cours | `/career-ops negotiate` |
 | `gagné` | Mission confirmée / contrat signé | Planifier démarrage |
 | `perdu` | Mission attribuée à quelqu'un d'autre | Demander retour si possible |
 | `abandonné` | Retiré volontairement (trop bas, trop loin...) | Archiver avec raison |
@@ -119,7 +119,7 @@ Le tracker détecte et signale les relances en retard :
 
 | Statut | Délai avant relance | Action suggérée |
 |--------|--------------------|-----------------| 
-| `postulé` | J+7 sans réponse | Envoyer relance 1 (`/career-ops prospecte`) |
+| `postulé` | J+7 sans réponse | Envoyer relance 1 (`/career-ops prospect`) |
 | `postulé` | J+21 sans réponse | Envoyer relance 2 (dernière) |
 | `postulé` | J+30 sans réponse | Passer à `abandonné` |
 | `entretien passé` | J+3 sans retour | Envoyer email de suivi |
@@ -144,8 +144,8 @@ Le tracker génère des alertes contextuelles :
 
 ```
 /career-ops scan          → missions découvertes ajoutées au tracker
-/career-ops mission [URL] → évaluation → ajout au tracker avec score
-/career-ops negocie       → déclenché depuis une mission en statut négociation
-/career-ops prospecte     → scripts de relance pour les missions postulées
-/career-ops intermission  → vue croisée avec la date de fin de mission actuelle
+/career-ops eval [URL] → évaluation → ajout au tracker avec score
+/career-ops negotiate       → déclenché depuis une mission en statut négociation
+/career-ops prospect     → scripts de relance pour les missions postulées
+/career-ops offboard  → vue croisée avec la date de fin de mission actuelle
 ```

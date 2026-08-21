@@ -34,12 +34,12 @@ Maximum recommandé : **15 missions par batch** (au-delà, découper en plusieur
 
 ### Étape 2 — Évaluation parallèle (sous-agents)
 
-Lancer `claude -p` en parallèle pour chaque mission avec le prompt de `modes/mission.md`.
+Lancer `claude -p` en parallèle pour chaque mission avec le prompt de `modes/eval.md`.
 
 ```bash
 # batch-runner.sh (adapté de l'original)
 for mission in "${missions[@]}"; do
-  claude -p "$(cat modes/mission.md modes/_shared.md) Évalue cette mission : $mission" \
+  claude -p "$(cat modes/eval.md modes/_shared.md) Évalue cette mission : $mission" \
     --output-format json >> data/batch-results.jsonl &
 done
 wait
@@ -81,7 +81,7 @@ Grouper par lettre (A, B, C, D, F).
 - Remote dominant dans les A+B : X%
 
 ## Actions recommandées
-1. Postuler sur [mission A1] — `/career-ops negocie` pour préparer
+1. Postuler sur [mission A1] — `/career-ops negotiate` pour préparer
 2. Postuler sur [mission A2]
 3. Garder [mission B1] en réserve
 → Ajouter toutes au tracker : `/career-ops tracker add --batch data/batch-results.jsonl`

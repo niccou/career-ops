@@ -4,7 +4,13 @@
       "WebSearch",
       "WebFetch",
       "mcp__claude_ai_Gmail__authenticate",
-      "mcp__claude_ai_Gmail__complete_authentication"
+      "mcp__claude_ai_Gmail__complete_authentication",
+      "mcp__airtable__create_records_for_table",
+      "mcp__airtable__update_records_for_table",
+      "mcp__airtable__delete_records_for_table",
+      "mcp__airtable__create_table",
+      "mcp__airtable__create_field",
+      "mcp__airtable__update_field"
     ]
   },
   "statusLine": {

@@ -3,7 +3,7 @@ name: career-ops
 description: AI job search command center -- evaluate offers, generate CVs, scan portals, track applications
 user_invocable: true
 args: mode
-argument-hint: "[scan | deep | pdf | oferta | ofertas | apply | batch | tracker | pipeline | contacto | training | project | interview-prep | update]"
+argument-hint: "[eval | compare | outreach | research | cv | apply | batch | tracker | pipeline | training | project | patterns | followup | negotiate | prospect | visibility | offboard | scan | gmail]"
 ---
 
 # career-ops -- Router
@@ -16,11 +16,11 @@ Determine the mode from `{{mode}}`:
 |-------|------|
 | (empty / no args) | `discovery` -- Show command menu |
 | JD text or URL (no sub-command) | **`auto-pipeline`** |
-| `oferta` | `oferta` |
-| `ofertas` | `ofertas` |
-| `contacto` | `contacto` |
-| `deep` | `deep` |
-| `pdf` | `pdf` |
+| `eval` | `eval` |
+| `compare` | `compare` |
+| `outreach` | `outreach` |
+| `research` | `research` |
+| `cv` | `cv` |
 | `training` | `training` |
 | `project` | `project` |
 | `tracker` | `tracker` |
@@ -30,6 +30,10 @@ Determine the mode from `{{mode}}`:
 | `batch` | `batch` |
 | `patterns` | `patterns` |
 | `followup` | `followup` |
+| `negotiate` | `negotiate` |
+| `prospect` | `prospect` |
+| `visibility` | `visibility` |
+| `offboard` | `offboard` |
 | `gmail` | `gmail` |
 
 **Auto-pipeline detection:** If `{{mode}}` is not a known sub-command AND contains JD text (keywords: "responsibilities", "requirements", "qualifications", "about the role", "we're looking for", company name + role) or a URL to a JD, execute `auto-pipeline`.
@@ -45,23 +49,30 @@ Show this menu:
 ```
 career-ops -- Command Center
 
-Available commands:
-  /career-ops {JD}      → AUTO-PIPELINE: evaluate + report + PDF + tracker (paste text or URL)
-  /career-ops pipeline  → Process pending URLs from inbox (data/pipeline.md)
-  /career-ops oferta    → Evaluation only A-F (no auto PDF)
-  /career-ops ofertas   → Compare and rank multiple offers
-  /career-ops contacto  → LinkedIn power move: find contacts + draft message
-  /career-ops deep      → Deep research prompt about company
-  /career-ops pdf       → PDF only, ATS-optimized CV
-  /career-ops training  → Evaluate course/cert against North Star
-  /career-ops project   → Evaluate portfolio project idea
-  /career-ops tracker   → Application status overview
-  /career-ops apply     → Live application assistant (reads form + generates answers)
-  /career-ops scan      → Scan portals and discover new offers
-  /career-ops batch     → Batch processing with parallel workers
-  /career-ops patterns  → Analyze rejection patterns and improve targeting
-  /career-ops followup  → Follow-up cadence tracker: flag overdue, generate drafts
-  /career-ops gmail     → Analyser les emails de missions (boîte Gmail dédiée)
+  /career-ops {JD}        → AUTO-PIPELINE: evaluate + report + CV + tracker (paste text or URL)
+  /career-ops gmail       → Analyse mission emails from dedicated Gmail inbox
+  /career-ops pipeline    → Process pending URLs from inbox (data/pipeline.md)
+  /career-ops scan        → Scan portals and discover new missions
+
+  /career-ops eval        → Evaluate a mission A-F (no auto CV)
+  /career-ops compare     → Compare and rank multiple missions
+  /career-ops batch       → Batch processing with parallel workers
+
+  /career-ops outreach    → LinkedIn power move: find contacts + draft message
+  /career-ops apply       → Live application assistant (reads form + generates answers)
+  /career-ops prospect    → Direct prospecting messages (former clients, new targets)
+
+  /career-ops negotiate   → Prepare TJM negotiation + contract checklist
+  /career-ops tracker     → Application pipeline overview
+  /career-ops followup    → Follow-up cadence tracker: flag overdue, generate drafts
+
+  /career-ops cv          → CV only, ATS-optimized
+  /career-ops research    → Deep research on a company
+  /career-ops visibility  → Audit and optimize freelance profile (Malt, Comet, LinkedIn)
+  /career-ops offboard    → Manage end-of-mission proactively
+  /career-ops training    → Evaluate course/cert against profile
+  /career-ops project     → Evaluate portfolio project idea
+  /career-ops patterns    → Analyze rejection patterns and improve targeting
 
 Inbox: add URLs to data/pipeline.md → /career-ops pipeline
 Or paste a JD directly to run the full pipeline.
@@ -76,12 +87,12 @@ After determining the mode, load the necessary files before executing:
 ### Modes that require `_shared.md` + their mode file:
 Read `modes/_shared.md` + `modes/{mode}.md`
 
-Applies to: `auto-pipeline`, `oferta`, `ofertas`, `pdf`, `contacto`, `apply`, `pipeline`, `scan`, `batch`, `gmail`
+Applies to: `auto-pipeline`, `eval`, `compare`, `cv`, `outreach`, `apply`, `pipeline`, `scan`, `batch`, `gmail`, `negotiate`, `prospect`, `followup`
 
 ### Standalone modes (only their mode file):
 Read `modes/{mode}.md`
 
-Applies to: `tracker`, `deep`, `training`, `project`, `patterns`, `followup`
+Applies to: `tracker`, `research`, `training`, `project`, `patterns`, `visibility`, `offboard`
 
 ### Modes delegated to subagent:
 For `scan`, `apply` (with Playwright), `pipeline` (3+ URLs), and `gmail` (> 5 emails): launch as Agent with the content of `_shared.md` + `modes/{mode}.md` injected into the subagent prompt. For `gmail` specifically, launch individual email evaluations as background Agents in parallel, then aggregate.

@@ -15,26 +15,46 @@ directement en boîte mail — zéro action manuelle ensuite.
 
 ---
 
-## 1. Malt — Alertes email natives
+## 0. Pylote — Agrégateur P1 (compte existant)
 
-1. https://www.malt.fr/missions → effectuer une recherche
-2. Compétences : `C#`, `.NET`, `Architecture logicielle` · Remote : Oui
-3. Cliquer **"Créer une alerte"**
+**pylote.fr** agrège Malt, Comet, Freelance.com et d'autres sources en un seul flux,
+avec alertes email filtrées. C'est la source principale d'alertes pour Nicolas.
 
-| Alerte | Compétences | Fréquence |
-|--------|-------------|-----------|
-| Lead Dev C# | C#, .NET, Lead Dev | Immédiate |
-| Architecte microservices | Architecture, Microservices, .NET | Quotidienne |
-| Formateur C# | C#, Formation, .NET | Quotidienne |
-| IA + .NET | LLM, IA, C# | Immédiate |
+Configuration recommandée sur Pylote :
+- Stack : `C#`, `.NET`
+- TJM minimum : `600 €/j`
+- Remote : oui
+- Type : freelance / mission
+
+**Pull direct via REST API (complément aux alertes email, free plan)** :
+
+```
+npm run pylote
+```
+
+Appelle `GET /v1/me/jobs` (5000+ missions agrégées) directement, sans attendre
+un email. Applique le même pré-filtre que `/career-ops scan` (TJM, stack,
+remote) et déduplique contre `data/tracker.tsv`. Setup : clé API dans `.env`
+(`PYLOTE_API_KEY`, récupérable dans l'extension Pylote → Settings → Clé API).
+Free plan : 60 req/h — largement suffisant pour un usage quotidien.
+Le MCP Pylote (outils dans la conversation) nécessite Pylote Plus (€19/mois) ;
+inutile tant que le script REST couvre le besoin.
 
 ---
 
-## 2. Comet — Matching automatique (profil à compléter)
+## 1. Malt — Alertes email natives (⚠️ inactives en pratique)
 
-Comet contacte proactivement quand une mission correspond.
-→ Compléter le profil à 100% sur https://www.comet.co (stack, TJM, dispo, remote).
-→ Activer les notifications email dans les paramètres.
+Les alertes Malt existent dans l'interface mais n'arrivent jamais en pratique.
+→ **Ne pas compter sur les alertes Malt.** Pylote agrège Malt à la place.
+→ Garder le profil Malt à jour pour le matching entrant (clients qui cherchent).
+
+---
+
+## 2. Comet — Matching automatique (⚠️ alertes inactives en pratique)
+
+Les alertes Comet n'arrivent jamais en pratique.
+→ **Ne pas compter sur les alertes Comet.** Pylote agrège Comet à la place.
+→ Garder le profil Comet à 100% pour le matching entrant.
 
 ---
 
@@ -127,5 +147,5 @@ Titre + TJM + remote → intéressant ?
               ↓
          Score A ou B ?
            Non → Passer
-           Oui → /career-ops negocie → Postuler
+           Oui → /career-ops negotiate → Postuler
 ```

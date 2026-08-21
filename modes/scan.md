@@ -3,11 +3,12 @@
 
 ## Objectif
 
-Rechercher automatiquement des missions freelance via deux méthodes complémentaires :
-1. **Web search** (Google/Bing) — requêtes ciblées, pas de scraping
-2. **Playwright** — navigation directe sur les portails qui l'acceptent
+Rechercher automatiquement des missions freelance via trois méthodes complémentaires :
+1. **Pylote REST API** — `npm run pylote` (5000+ missions agrégées Malt/Comet/Freelance.com, zéro scraping, voir `modes/alertes.md` §0)
+2. **Web search** (Google/Bing) — requêtes ciblées, pas de scraping
+3. **Playwright** — navigation directe sur les portails qui l'acceptent
 
-Malt et Comet nécessitent une auth — ils sont couverts par `modes/alertes.md`.
+Malt et Comet nécessitent une auth directe — ils sont couverts via Pylote et `modes/alertes.md`.
 
 ---
 
@@ -29,6 +30,8 @@ site:xxljobs.fr "C#" ".NET" freelance
 site:remoteok.com ".NET" "C#" remote
 site:indeed.fr "mission freelance" "Lead Dev C#" remote
 "Lead Dev C# .NET" freelance mission remote -CDI -CDD
+"Tech Lead C# .NET" freelance mission remote -CDI -CDD
+"Tech Lead hands-on .NET" freelance mission
 "Architecte .NET" freelance mission remote
 "formateur C# .NET" intra-entreprise
 ```
@@ -63,6 +66,14 @@ URL : https://aijobs.net/?q=.net+c%23
 Filtre : remote, contract
 ```
 
+#### Freelance-Informatique
+```
+URL : https://www.freelance-informatique.fr/offres-freelance?keywords=C%23+.NET+remote
+URL : https://www.freelance-informatique.fr/offres-freelance?keywords=Lead+Dev+.NET
+Extraire uniquement les URLs au format /mission-[slug]-[YYMMDDXXX]
+Ignorer : /mission-c-net-*, /developpeur-*, /cv-mission-*
+```
+
 #### Freelance.com
 ```
 URL : https://www.freelance.com/missions.php?kw=Lead+Dev+C%23+.NET&remote=1
@@ -72,7 +83,7 @@ URL : https://www.freelance.com/missions.php?kw=Lead+Dev+C%23+.NET&remote=1
 
 ## Pipeline
 
-**Étape 1 — Lancer en parallèle** : web search (5 requêtes) + Playwright (5 portails)
+**Étape 1 — Lancer en parallèle** : `npm run pylote` + web search (5 requêtes) + Playwright (5 portails)
 
 **Étape 2 — Dédupliquer** : même titre + même société = doublon
 
@@ -81,6 +92,7 @@ URL : https://www.freelance.com/missions.php?kw=Lead+Dev+C%23+.NET&remote=1
 - 100% sur site sans remote
 - Stack principale non-.NET
 - Annonce > 30 jours
+- URLs de type profil/CV freelance (ex: `freelance-informatique.fr/mission-c-net-*`, `/developpeur-*`, `/cv-mission-*`) — ce sont des pages catégorie ou CVs, pas des annonces individuelles
 
 **Étape 4 — Pre-score rapide** (garder si > 60%) :
 
@@ -90,7 +102,7 @@ URL : https://www.freelance.com/missions.php?kw=Lead+Dev+C%23+.NET&remote=1
 | Remote | 30% | "remote", "full remote", "télétravail" |
 | TJM OK | 20% | ≥ 600 ou non précisé |
 
-**Étape 5 — Rapport** avec top missions et liens directs vers `/career-ops mission [URL]`
+**Étape 5 — Rapport** avec top missions et liens directs vers `/career-ops eval [URL]`
 
 ---
 
@@ -108,7 +120,7 @@ URL : https://www.freelance.com/missions.php?kw=Lead+Dev+C%23+.NET&remote=1
 - Source : [portail] | TJM : [X€/j] | Remote : [oui/hybride]
 - URL : [lien]
 - Pre-score : X%
-→ `/career-ops mission [URL]`
+→ `/career-ops eval [URL]`
 
 [suite...]
 

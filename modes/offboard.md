@@ -11,7 +11,7 @@ ne prospecter qu'une fois la mission terminée.
 
 ## Déclencheur
 
-`/career-ops intermission` ou automatiquement si la mission en cours
+`/career-ops offboard` ou automatiquement si la mission en cours
 approche de sa fin (< 6 semaines restantes estimées).
 
 ---
@@ -38,7 +38,7 @@ est de 3 à 6 semaines. Prospecter trop tard = créer un trou dans le planning.
 ### 4 semaines avant
 
 - [ ] Lancer le scan de portails (`/career-ops scan`)
-- [ ] Évaluer les 5–10 meilleures missions trouvées (`/career-ops mission`)
+- [ ] Évaluer les 5–10 meilleures missions trouvées (`/career-ops eval`)
 - [ ] Postuler sur les missions A et B
 - [ ] Post LinkedIn sur les compétences / disponibilité à venir
 

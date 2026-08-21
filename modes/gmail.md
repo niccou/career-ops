@@ -108,7 +108,7 @@ Pour chaque email avec contenu mission :
 
 ### Étape 4 — Évaluer chaque mission
 
-Appliquer le pipeline complet de `modes/mission.md` :
+Appliquer le pipeline complet de `modes/eval.md` :
 
 1. Extraction des données brutes (titre, stack, TJM, remote, durée, client, secteur…)
 2. Détection de l'archétype (lead-dev, archi-migration, backend-senior, formateur, ia-llm…)
@@ -175,7 +175,7 @@ d'appliquer. Utiliser les outils de modification de labels disponibles post-auth
 
 ## Prochaine action
 → /career-ops tracker  (voir le pipeline complet)
-→ /career-ops negocie  (pour préparer une candidature A/B)
+→ /career-ops negotiate  (pour préparer une candidature A/B)
 ```
 
 ---

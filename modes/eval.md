@@ -37,12 +37,33 @@ Extraire depuis l'annonce :
 Parmi les archetypes de Nicolas (cf. _shared.md), identifier lequel correspond
 le mieux : lead-dev, archi-migration, backend-senior, formateur, ia-llm, devsecops.
 
+### Seuils TJM par archétype
+
+| Archétype | TJM min | Exception |
+|-----------|---------|-----------|
+| lead-dev-dotnet | 650 €/j | — |
+| archi-microservices | 700 €/j | — |
+| backend-senior | 550 €/j | — |
+| formateur-dotnet | 1000 €/j | Écoles (école, lycée, GRETA, campus, université, IUT, BTS, CFA) : 400–500 €/j |
+| ia-llm-dotnet | 800 €/j | — |
+| devsecops | 650 €/j | — |
+| audit-conseil-ponctuel | 800 €/j | — |
+| **non détecté** | **600 €/j** | Seuil global de secours |
+
+Pour le scoring TJM : comparer le TJM proposé au seuil minimum de l'archétype détecté.
+- TJM ≥ cible haute : 5/5
+- TJM entre min et cible : 3–4/5
+- TJM légèrement sous le min (< 10%) : 1–2/5 + signal 🟠
+- TJM sous le min : 0/5 + signal 🔴 deal breaker
+
+---
+
 ### Étape 3 — Scoring (10 dimensions, note 0–5)
 
 | # | Dimension | Poids | Description |
 |---|-----------|-------|-------------|
 | 1 | **Match stack** | 25% | C# .NET dominant ? Version récente (.NET 6+) ? |
-| 2 | **TJM** | 20% | Vs TJM cible pour l'archétype. < 600 = 0. |
+| 2 | **TJM** | 20% | Vs seuil minimum de l'archétype détecté (voir table ci-dessous). Sous le seuil = 0. |
 | 3 | **Remote** | 15% | Full remote = 5. Hybride ok = 3. Sur site seul = 0–1. |
 | 4 | **Client final** | 10% | Client direct = 5. ESN avec client identifié = 3. ESN opaque = 1. |
 | 5 | **Durée & renouvellement** | 10% | 6 mois+ = 5. 3 mois = 3. < 1 mois = 1. **Exception audit-conseil-ponctuel : 1–5 jours = 5 (format nominal).** |
@@ -65,7 +86,7 @@ le mieux : lead-dev, archi-migration, backend-senior, formateur, ia-llm, devseco
 ### Étape 4 — Détection des signaux d'alerte
 
 Signaler explicitement :
-- 🔴 Deal breaker (TJM < 600, 100% sur site, paiement > 60j)
+- 🔴 Deal breaker (TJM sous le seuil de l'archétype, 100% sur site, paiement > 60j)
 - 🟠 Points à négocier (ESN, framework ancien, délai paiement 45j)
 - 🟢 Signaux positifs (client final connu, stack moderne, remote, durée longue)
 

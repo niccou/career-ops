@@ -15,14 +15,14 @@ pas des emplois salariés. Les modes et le scoring sont adaptés en conséquence
 
 ```
 /career-ops                → Aide et liste des modes
-/career-ops mission {URL ou texte}  → Évaluation d'une mission freelance
+/career-ops eval {URL ou texte}  → Évaluation d'une mission freelance
 /career-ops scan           → Scan des portails (Malt, Comet, LinkedIn...)
-/career-ops prospecte      → Messages de prospection directe
-/career-ops negocie        → Préparation négociation TJM + checklist contrat
-/career-ops visibilite     → Audit et optimisation profil freelance
-/career-ops intermission   → Gestion proactive fin de mission
+/career-ops prospect      → Messages de prospection directe
+/career-ops negotiate        → Préparation négociation TJM + checklist contrat
+/career-ops visibility     → Audit et optimisation profil freelance
+/career-ops offboard   → Gestion proactive fin de mission
 /career-ops tracker        → Pipeline des missions en cours
-/career-ops pdf            → Génération CV/profil freelance PDF
+/career-ops cv            → Génération CV/profil freelance PDF
 /career-ops batch          → Évaluation batch de plusieurs missions
 ```
 
@@ -83,15 +83,19 @@ career-ops/
 │   └── portals.yml              # Plateformes à scanner
 ├── modes/
 │   ├── _shared.md               # Contexte permanent
-│   ├── mission.md               # Évaluation mission freelance
-│   ├── negocie.md               # Négociation TJM + contrat
-│   ├── visibilite.md            # Optimisation profil
-│   ├── prospecte.md             # Prospection directe
-│   ├── intermission.md          # Gestion inter-missions
-│   ├── pdf.md                   # Génération profil PDF
+│   ├── eval.md                  # Évaluation mission freelance
+│   ├── negotiate.md             # Négociation TJM + contrat
+│   ├── visibility.md            # Optimisation profil
+│   ├── prospect.md              # Prospection directe
+│   ├── offboard.md              # Gestion inter-missions
+│   ├── cv.md                    # Génération profil PDF
 │   ├── scan.md                  # Scanner portails
 │   ├── batch.md                 # Batch évaluation
-│   └── tracker.md               # Suivi pipeline
+│   ├── tracker.md               # Suivi pipeline
+│   ├── outreach.md              # LinkedIn power move
+│   ├── compare.md               # Comparaison multi-missions
+│   ├── research.md              # Recherche approfondie société
+│   └── gmail.md                 # Analyse emails Gmail
 ├── data/                        # Données (gitignored)
 ├── reports/                     # Rapports d'évaluation (gitignored)
 └── output/                      # PDFs générés (gitignored)

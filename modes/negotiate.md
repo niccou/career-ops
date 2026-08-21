@@ -10,7 +10,7 @@ et générer des scripts de réponse adaptés au contexte.
 
 ## Déclencheur
 
-`/career-ops negocie [contexte]` ou demande de préparation à une négociation.
+`/career-ops negotiate [contexte]` ou demande de préparation à une négociation.
 
 ---
 
@@ -79,7 +79,7 @@ Qu'est-ce qui est flexible de votre côté ?
 
 ```
 Avant d'aller plus loin, j'aurais besoin de connaître le secteur d'activité
-et la taille du client final — c'est un critère de choix pour moi (secteur financier,
+et la taille du client final. C'est un critère de choix pour moi (secteur financier,
 industrie, etc.). Pouvez-vous me donner ces informations ?
 ```
 
@@ -112,11 +112,11 @@ Avant de signer, vérifier :
 - [ ] Durée initiale précisée
 - [ ] Clause de renouvellement explicite
 - [ ] Délai de préavis : 6 semaines **réciproque** (client → toi ET toi → client)
-- [ ] Symétrie obligatoire — refuser un préavis unilatéral (client seul)
+- [ ] Symétrie obligatoire : refuser un préavis unilatéral (client seul)
 - [ ] Conditions de résiliation anticipée
 
 **Périmètre :**
-- [ ] Livrables définis (ou régie sans livrables précis — les deux sont OK, mais le savoir)
+- [ ] Livrables définis (ou régie sans livrables précis, les deux sont OK, mais le savoir)
 - [ ] Nombre de jours/semaine précisé
 - [ ] Remote / hybride écrit noir sur blanc
 
@@ -147,4 +147,4 @@ Avant de signer, vérifier :
 | Formateur C# .NET | 700 | 850 | 1100 |
 | Expert IA/LLM + .NET | 800 | 950 | 1200 |
 
-> Source : Baromètre Malt / Comet / enquêtes communautaires — vérifier la mise à jour annuelle.
+> Source : Baromètre Malt / Comet / enquêtes communautaires. Vérifier la mise à jour annuelle.

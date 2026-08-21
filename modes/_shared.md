@@ -45,8 +45,8 @@ TeamCity, Jenkins, SQL Server, xUnit, Moq, Reqnroll
 
 1. **Lead Dev / Tech Lead C# .NET** (650–850 €/j) — leadership technique, standards, revue de code
 2. **Architecte / Migration microservices** (700–900 €/j) — legacy → .NET 8, DDD, CQRS
-3. **Dev Backend Senior C# .NET** (600–750 €/j) — feature dev, TDD/BDD, missions opérationnelles
-4. **Formateur C# / .NET / Architecture** (750–1000 €/j) — intra-entreprise 1–5 jours, présentiel/remote
+3. **Dev Backend Senior C# .NET** (550–750 €/j) — feature dev, TDD/BDD, missions opérationnelles
+4. **Formateur C# / .NET / Architecture** (1000 €/j standard · 400–500 €/j écoles) — intra-entreprise 1–5 jours, présentiel/remote
 5. **Expert IA/LLM appliqué + .NET** (800–1100 €/j) — intégration LLM, automatisation IA, profil rare
 6. **DevSecOps / Sécurité applicative** (650–850 €/j) — OWASP, audit, remédiation (exp. AXA Wealth)
 7. **Audit / Conseil technique ponctuel** (800–1200 €/j) — revue de code, audit d'architecture, conseil 1–5 jours. Micro-entreprise, réalisable en parallèle d'une mission principale.
@@ -140,3 +140,59 @@ TeamCity, Jenkins, SQL Server, xUnit, Moq, Reqnroll
 - Français par défaut, anglais si client étranger
 - Mettre en avant les faits (certifications, clients connus, techno précises)
 - Éviter les généralités ("passionné", "motivé") — préférer les preuves
+### Anti-marqueurs IA (rédaction candidature / prospection / CV)
+
+Les recruteurs repèrent les textes générés par IA à des tics de langage précis.
+**Interdits** dans tout texte destiné à un humain (mail, note LinkedIn, lettre, bio, CV) :
+
+| À bannir | Pourquoi | Remplacer par |
+|---|---|---|
+| « Fort d'une solide expérience » | « solide » = marqueur IA n°1 des accroches | « 7 ans sur … », un chiffre ou un client |
+| « motivé et dynamique » | « dynamique » = top 13 des mots ChatGPT | rien — le montrer par un fait |
+| « Cette approche me permet de… » | top 19, pure redondance | le résultat directement |
+| « Cependant / En outre / Par ailleurs / De plus / Ainsi » en tête de phrase | connecteurs = marqueur n°1 | phrases courtes, pas de connecteur |
+| « dans un paysage/contexte toujours plus complexe » | « complexe » et « paysage » = top 2 et 12 | le contexte réel du client |
+| « contribuer activement », « animé par » | 380× plus fréquents chez l'IA | le verbe d'action concret |
+| « En résumé », « Il est important de noter que » | formules de clôture robotiques | supprimer, finir sur l'action |
+
+**Règles de rédaction qui en découlent :**
+- Un fait vérifiable (client, techno, chiffre, durée) vaut mieux qu'un adjectif.
+- Pas de triades rythmées (« rigueur, autonomie et esprit d'équipe »).
+- Varier la longueur des phrases ; l'IA écrit des phrases de longueur régulière.
+- **Jamais de tiret long (—) en milieu de phrase.** Nicolas les remplace systématiquement :
+  couper en deux phrases, ou utiliser une virgule, un deux-points ou une parenthèse.
+  (Les tirets restent admis dans les titres et les tableaux des rapports internes.)
+- Zéro emoji décoratif, pas de gras dispersé dans un mail.
+- Relire à voix haute : si Nicolas ne le dirait pas à l'oral, le réécrire.
+
+Source : HelloWork, « Les phrases qui vous grillent auprès d'un recruteur »
+(https://www.hellowork.com/fr-fr/medias/ia-phrases-grillent-recruteur.html)
+
+---
+
+## Base de contacts (Airtable)
+
+Chaque contact humain identifié pendant une prospection, un outreach, une relance
+ou une négociation doit avoir une fiche dans la table Contacts, pas seulement une
+mention dans les notes du tracker.
+
+- Workspace : « MIssions Freelance » · Base **Contacts** (`appaiyea0oZpBc6so`)
+  · Table **Contacts** (`tblagi3YSBDgVe8LN`)
+- Champs : Name, Company, Email, Phone, First Meet, Last Contact, Last Event,
+  Subject, TJM, More
+
+**Quand écrire (modes `prospect`, `outreach`, `followup`, `negotiate`) :**
+- **Nouveau contact** (nom identifié pour la première fois) → créer une fiche :
+  Name, Company (société + rôle), First Meet = date du premier contact,
+  Last Contact = même date, Last Event = action réalisée, Subject = intitulé
+  de la mission/l'opportunité concernée, More = contexte utile (degré LinkedIn,
+  relations communes, canal, prochaine relance prévue).
+- **Contact déjà en base** (relance, réponse, mise à jour de négo) → mettre à
+  jour Last Contact, Last Event et More sur la fiche existante (chercher par
+  Name + Company avant de créer un doublon).
+- Le TJM se remplit seulement quand un chiffre a été échangé avec ce contact
+  (proposé, négocié, confirmé) — jamais une fourchette générique de profil.
+
+`data/tracker.tsv` reste la source de vérité pour le suivi mission (statut,
+score, action). La table Contacts est un carnet d'adresses transverse : un
+même contact peut apparaître sur plusieurs missions au fil du temps.
